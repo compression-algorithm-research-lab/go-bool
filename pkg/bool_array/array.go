@@ -59,6 +59,7 @@ func (x *BoolArray) Set(index int, v bool) *BoolArray {
 	byteValue := byte(if_expression.Return(v, 1, 0))
 	// 除了offset其它位置都原样拷贝
 	oldByte := x.values[targetIndex] ^ (1 << offset)
+	// 然后再把offset位置的新的值设置上
 	newByte := oldByte | (byteValue << offset)
 	x.values[targetIndex] = newByte
 	return x
