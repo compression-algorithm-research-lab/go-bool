@@ -5,8 +5,13 @@ import (
 	if_expression "github.com/golang-infrastructure/go-if-expression"
 )
 
+// BoolArray 布尔数组
 type BoolArray struct {
-	values   []byte
+
+	// 数组的值
+	values []byte
+
+	// 数组的容量
 	capacity int
 }
 
